@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - TELEGRAM_BOT_TOKEN=7806867165:AAHokr06ClMjPcdHOWoLihK8vq78MO6-xuU 
+    restart: unless-stopped
+    
+volumes:
+  postgres_data:

@@ -22,7 +22,7 @@ bot.command('start', (ctx) => {
                 Markup.button.text('Сведения'),
             ],
         ])
-        .resize() // Уменьшаем размер кнопок
+        .resize()
     );
 });
 
@@ -48,4 +48,9 @@ bot.command('info', (ctx) => {
     );
 });
 
-bot.launch();
+// Запуск бота с обработкой ошибок
+bot.launch().then(() => {
+    console.log('Бот запущен');
+}).catch(err => {
+    console.error('Ошибка при запуске бота:', err);
+});
